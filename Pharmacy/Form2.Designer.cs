@@ -58,6 +58,7 @@
             this.upgradeN = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Button();
+            this.Cart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // medRemoval
@@ -181,7 +182,7 @@
             // 
             // orderButton
             // 
-            this.orderButton.Location = new System.Drawing.Point(642, 60);
+            this.orderButton.Location = new System.Drawing.Point(678, 61);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(75, 23);
             this.orderButton.TabIndex = 14;
@@ -325,11 +326,22 @@
             this.LogOut.UseVisualStyleBackColor = true;
             this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
+            // Cart
+            // 
+            this.Cart.Location = new System.Drawing.Point(560, 61);
+            this.Cart.Name = "Cart";
+            this.Cart.Size = new System.Drawing.Size(52, 23);
+            this.Cart.TabIndex = 31;
+            this.Cart.Text = "Cart";
+            this.Cart.UseVisualStyleBackColor = true;
+            this.Cart.Click += new System.EventHandler(this.Cart_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.Cart);
             this.Controls.Add(this.LogOut);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.upgradeN);
@@ -402,5 +414,6 @@
         private System.Windows.Forms.TextBox upgradeN;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button LogOut;
+        private System.Windows.Forms.Button Cart;
     }
 }

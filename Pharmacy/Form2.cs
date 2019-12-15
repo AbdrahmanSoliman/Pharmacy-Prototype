@@ -15,6 +15,8 @@ namespace Pharmacy
     {
         List l = new List();
         double _balance = 0;
+        double total = 0;
+        string cart = "Your Order: \n\n\t";
         class Node
         {
             string dataname;
@@ -344,7 +346,7 @@ namespace Pharmacy
             MessageBox.Show("The types of medicines " + counter);
         }
 
-        private void orderButton_Click(object sender, EventArgs e)
+        private void Cart_Click(object sender, EventArgs e)
         {
             if (med.Text != "")
             {
@@ -371,9 +373,10 @@ namespace Pharmacy
                     }
                     else
                     {
-                        double total = x * Qnt;
+                        total += (x * Qnt);
                         _balance = _balance + total;
-                        MessageBox.Show("Your order: \n\t" + med.Text + "\n\tQnt: " + Qnt + "\n\n\t\t Total price: " + total);
+                        MessageBox.Show("You have added " + Qnt + " box{es) of " + med.Text + " to the cart! \n\t\tPrice/Box: " + x);
+                        cart += med.Text + "\n\tQnt: " + Qnt + "\n\tPrice/Box: " + x + "\n\n\t";
                     }
                 }
                 catch
@@ -383,6 +386,21 @@ namespace Pharmacy
             }
             else
                 MessageBox.Show("Enter the name of the med");
+
+            hideALL();
+        }
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            if(cart == "Your Order: \n\n\t")
+            {
+                MessageBox.Show("Your cart is empty");
+            }
+            else
+            {
+                MessageBox.Show(cart += "\n\n\n\t  Total price: " + total);
+            }
+            total = 0;
+            cart = "Your Order: \n\n\t";
 
             hideALL();
         }
