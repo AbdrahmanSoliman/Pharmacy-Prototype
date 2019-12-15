@@ -1,0 +1,108 @@
+﻿namespace Pharmacy
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.username = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
+            this.LogIn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // username
+            // 
+            this.username.Location = new System.Drawing.Point(151, 69);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(100, 20);
+            this.username.TabIndex = 0;
+            // 
+            // password
+            // 
+            this.password.Location = new System.Drawing.Point(151, 105);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(100, 20);
+            this.password.TabIndex = 1;
+            // 
+            // LogIn
+            // 
+            this.LogIn.Location = new System.Drawing.Point(164, 149);
+            this.LogIn.Name = "LogIn";
+            this.LogIn.Size = new System.Drawing.Size(75, 23);
+            this.LogIn.TabIndex = 2;
+            this.LogIn.Text = "Log in";
+            this.LogIn.UseVisualStyleBackColor = true;
+            this.LogIn.Click += new System.EventHandler(this.LogIn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(75, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Username";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(75, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(357, 221);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LogIn);
+            this.Controls.Add(this.password);
+            this.Controls.Add(this.username);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Unique Pharma";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.Button LogIn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
+}
+
