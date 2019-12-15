@@ -67,7 +67,24 @@ namespace Pharmacy
 
             public void add(string datan, int dataq, double datap, string loaderORNot)
             {
+                if(dataq <= 0 && datap <= 0)
+                {
+                    MessageBox.Show("Invalid Quantity/Price");
+                    return;
+                }
+                else if (dataq <= 0)
+                {
+                    MessageBox.Show("Invalid Quantity");
+                    return;
+                }
+                else if (datap <= 0)
+                {
+                    MessageBox.Show("Invalid Price");
+                    return;
+                }
+
                 Node tmp = new Node(datan, dataq, datap);
+                
                 if (start == null)
                 {
                     start = tmp;
@@ -78,6 +95,19 @@ namespace Pharmacy
                 }
                 else
                 {
+                    Node q = start;
+                    while(q!=null)
+                    {
+                        if(q.DataN == datan)
+                        {
+                            q.DataQ += dataq;
+                            q.DataP = datap;
+                            if (loaderORNot == "Not")
+                                MessageBox.Show(dataq + " box(es) of medicine " + datan + " has been supplied");
+                            return;
+                        }
+                        q = q.Next;
+                    }
                     tail.Next = tmp;
                     tail = tmp;
                     if (loaderORNot == "Not")
@@ -115,7 +145,7 @@ namespace Pharmacy
                     prev = prev.Next;
                     tmp = tmp.Next;
                 }
-                Console.WriteLine("The medicine" + datan + " doesn't exist");
+                MessageBox.Show("The medicine " + datan + " doesn't exist");
             }
 
             public int noOfMed()
@@ -200,8 +230,6 @@ namespace Pharmacy
 
             public void OnClosing()
             {
-                if (start != null)
-                {
                     Node q = start;
 
                     using (FileStream fs = new FileStream("stock.txt", FileMode.Create, FileAccess.Write))
@@ -217,7 +245,6 @@ namespace Pharmacy
                         }
                         sr.Flush();
                     }
-                }
             }
             public void Loader()
             {
@@ -315,8 +342,6 @@ namespace Pharmacy
         {
             int counter = l.noOfMed();
             MessageBox.Show("The types of medicines " + counter);
-
-            hideALL();
         }
 
         private void orderButton_Click(object sender, EventArgs e)
@@ -326,6 +351,11 @@ namespace Pharmacy
                 try
                 {
                     int Qnt = Convert.ToInt32(qnt.Text);
+                    if (Qnt <= 0)
+                    {
+                        MessageBox.Show("Invalid Quantity");
+                        return;
+                    }
                     double x = l.search(med.Text, Qnt);
                     if (x == -1)
                     {
@@ -393,9 +423,12 @@ namespace Pharmacy
             l.OnClosing();
             Program.f1.Close();
         }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            l.OnClosing();
+            this.Hide();
+            Program.f1.Show();
+        }
     }
-
-
-
- 
 }

@@ -57,6 +57,7 @@
             this.upbutton = new System.Windows.Forms.Button();
             this.upgradeN = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // medRemoval
@@ -314,11 +315,22 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "NAME";
             // 
+            // LogOut
+            // 
+            this.LogOut.Location = new System.Drawing.Point(0, 537);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(54, 63);
+            this.LogOut.TabIndex = 30;
+            this.LogOut.Text = "Log Out";
+            this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.upgradeN);
             this.Controls.Add(this.upbutton);
@@ -389,5 +401,6 @@
         private System.Windows.Forms.Button upbutton;
         private System.Windows.Forms.TextBox upgradeN;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button LogOut;
     }
 }

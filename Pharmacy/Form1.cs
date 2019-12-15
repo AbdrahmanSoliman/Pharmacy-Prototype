@@ -29,6 +29,8 @@ namespace Pharmacy
             {
                 MessageBox.Show("  Invalid username or password");
             }
+            username.Text = "";
+            password.Text = "";
         }
     }
 }
