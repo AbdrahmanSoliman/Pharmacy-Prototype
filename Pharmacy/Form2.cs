@@ -76,8 +76,11 @@ namespace Pharmacy
                 }
                 else if (dataq <= 0)
                 {
-                    MessageBox.Show("Invalid Quantity");
-                    return;
+                    if(loaderORNot == "Not")
+                    {
+                        MessageBox.Show("Invalid Quantity");
+                        return;
+                    }
                 }
                 else if (datap <= 0)
                 {
@@ -194,6 +197,12 @@ namespace Pharmacy
 
             public void upgrade(string datan, double up)
             {
+                if(up <= 0)
+                {
+                    MessageBox.Show("Invalid Price");
+                    return;
+                }
+
                 Node q = start;
 
                 while (q != null)
@@ -374,7 +383,6 @@ namespace Pharmacy
                     else
                     {
                         total += (x * Qnt);
-                        _balance = _balance + total;
                         MessageBox.Show("You have added " + Qnt + " box{es) of " + med.Text + " to the cart! \n\t\tPrice/Box: " + x);
                         cart += med.Text + "\n\tQnt: " + Qnt + "\n\tPrice/Box: " + x + "\n\n\t";
                     }
@@ -398,6 +406,7 @@ namespace Pharmacy
             else
             {
                 MessageBox.Show(cart += "\n\n\n\t  Total price: " + total);
+                _balance = _balance + total;
             }
             total = 0;
             cart = "Your Order: \n\n\t";

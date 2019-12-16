@@ -182,9 +182,9 @@
             // 
             // orderButton
             // 
-            this.orderButton.Location = new System.Drawing.Point(678, 61);
+            this.orderButton.Location = new System.Drawing.Point(713, 101);
             this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(75, 23);
+            this.orderButton.Size = new System.Drawing.Size(75, 61);
             this.orderButton.TabIndex = 14;
             this.orderButton.Text = "Order";
             this.orderButton.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@
             // 
             // Cart
             // 
-            this.Cart.Location = new System.Drawing.Point(560, 61);
+            this.Cart.Location = new System.Drawing.Point(605, 61);
             this.Cart.Name = "Cart";
             this.Cart.Size = new System.Drawing.Size(52, 23);
             this.Cart.TabIndex = 31;
